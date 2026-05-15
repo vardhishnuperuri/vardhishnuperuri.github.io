@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vardhishnu Peruri — AI/ML Portfolio</title>
+
+  <meta name="description"
+    content="Portfolio of Vardhishnu Peruri — AI & ML undergraduate, developer, and national-level fencing player." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --card: #ffffff;
+      --accent-1: #2563eb;
+      --accent-2: #0ea5e9;
+      --text: #111827;
+      --muted: #6b7280;
+      --radius: 14px;
+      --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b1120;
+      --card: #111827;
+      --text: #f3f4f6;
+      --muted: #cbd5e1;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: white;
+      padding: 70px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 45px;
+      flex-wrap: wrap;
+    }
+
+    .profile-pic {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.7rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      margin-bottom: 14px;
+      opacity: 0.95;
+    }
+
+    .hero-buttons {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #2563eb;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .socials {
+      display: flex;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .socials a {
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.15);
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: sticky;
+      top: 15px;
+      z-index: 1000;
+      margin-top: -25px;
+    }
+
+    .nav-box {
+      background: var(--card);
+      box-shadow: var(--shadow-md);
+      border-radius: 14px;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: var(--accent-1);
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-1);
+    }
+
+    .theme-btn {
+      border: none;
+      background: var(--bg);
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 35px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 35px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--accent-1);
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 30px;
+    }
+
+    .about-box p {
+      margin-bottom: 15px;
+      color: var(--muted);
+    }
+
+    .quick-facts {
+      background: var(--bg);
+      padding: 25px;
+      border-radius: 14px;
+    }
+
+    .quick-facts p {
+      margin-bottom: 12px;
+    }
+
+    /* EDUCATION */
+
+    .timeline {
+      border-left: 3px solid var(--accent-1);
+      padding-left: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--bg);
+      padding: 22px;
+      border-radius: 14px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent-1);
+      margin-bottom: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--bg);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      margin: 10px 0 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: white;
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .achievement-item {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .achievement-item i {
+      color: var(--accent-1);
+      margin-top: 6px;
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px) {
+
+      .about-grid,
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .socials {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+
+  <header class="hero">
+
+    <div class="container hero-content">
+
+      <img src="C:\Users\Vardhishnu Peruri\OneDrive\Desktop\portfolio\profile.png"
+        alt="Vardhishnu Profile"
+        class="profile-pic">
+
+      <div class="hero-text">
+
+        <h1>Peruri Venkata Naga Sai Vardhishnu</h1>
+
+        <p>
+          Aspiring AI & Machine Learning Engineer • Developer • National-level
+          Fencing Player
+        </p>
+
+        <p>
+          Vasireddy Venkatadri International Technological University
+          — CGPA: <strong>7.5 / 10</strong>
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="C:\Users\Vardhishnu Peruri\OneDrive\Desktop\portfolio\Vardhishnu_peruri_Resume.pdf"
+            target="_blank"
+            class="btn btn-primary">
+
+            <i class="fa-solid fa-file-lines"></i>
+            Resume
+
+          </a>
+
+          <a href="#contact"
+            class="btn btn-outline">
+
+            <i class="fa-solid fa-envelope"></i>
+            Contact
+
+          </a>
+
+        </div>
+
+        <div class="socials">
+
+          <a href="https://github.com/vardhishnuperuri">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/vardhishnu-peruri-4a3594368/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:vardhishnuperuri@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- NAV -->
+
+  <nav>
+
+    <div class="container nav-box">
+
+      <div class="logo">Vardhishnu</div>
+
+      <div class="nav-links">
+
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+
+      </div>
+
+      <button class="theme-btn" id="themeToggle">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+
+    </div>
+
+  </nav>
+
+  <main class="container">
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-user"></i>
+          About Me
+        </h2>
+
+        <div class="about-grid">
+
+          <div class="about-box">
+
+            <p>
+              Hi, I'm <strong>Vardhishnu Peruri</strong>, an aspiring AI & Machine
+              Learning engineer currently pursuing B.Tech in AIML.
+            </p>
+
+            <p>
+              I enjoy building projects using Python, Machine Learning, and
+              development technologies while continuously improving my technical
+              and problem-solving skills.
+            </p>
+
+            <p>
+              Apart from technology, I actively participate in fencing competitions
+              at inter-university and national levels which helped me develop
+              discipline, teamwork, and leadership.
+            </p>
+
+          </div>
+
+          <div class="quick-facts">
+
+            <h3 style="margin-bottom:18px;">Quick Facts</h3>
+
+            <p><strong>Degree:</strong> B.Tech AIML</p>
+
+            <p><strong>CGPA:</strong> 7.5</p>
+
+            <p><strong>Skills:</strong> Python, Java, SQL</p>
+
+            <p><strong>Sports:</strong> National-level Fencing</p>
+
+            <p><strong>Interests:</strong> AI & Development</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+      <div class="card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-graduation-cap"></i>
+          Education
+        </h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+
+            <h3>B.Tech — AIML (2023 - Present)</h3>
+
+            <p>
+              Vasireddy Venkatadri International Technological University
+            </p>
+
+            <p>CGPA : 7.5</p>
+
+          </div>
+
+          <div class="timeline-item">
+
+            <h3>Intermediate — MPC (2021 - 2023)</h3>
+
+            <p>VIT Junior College</p>
+
+            <p>Marks : 809</p>
+
+          </div>
+
+          <div class="timeline-item">
+
+            <h3>SSC (2020 - 2021)</h3>
+
+            <p>Narayana Public School</p>
+
+            <p>Marks : 600</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+      <div class="card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-code"></i>
+          Skills
+        </h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <i class="fab fa-python"></i>
+            <h3>Python</h3>
+          </div>
+
+          <div class="skill-card">
+            <i class="fab fa-java"></i>
+            <h3>Java</h3>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>SQL</h3>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-brain"></i>
+            <h3>Machine Learning</h3>
+          </div>
+
+          <div class="skill-card">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git & GitHub</h3>
+          </div>
+
+          <div class="skill-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>VS Code</h3>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+      <div class="card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-laptop-code"></i>
+          Projects
+        </h2>
+
+        <div class="projects-grid">
+
+          <div class="project-card">
+
+            <img src="collegequora.png"
+              alt="College Quora">
+
+            <div class="project-content">
+
+              <h3>College Quora</h3>
+
+              <p>
+                A student discussion platform where users can ask questions,
+                share knowledge, and interact with the college community.
+              </p>
+
+              <div class="tags">
+
+                <span class="tag">Python</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Web App</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="project-card">
+
+            <img src="emotiondetection.png"
+              alt="Emotion Detection">
+
+            <div class="project-content">
+
+              <h3>Emotion Detection using DeepFace</h3>
+
+              <p>
+                Real-time emotion detection system using DeepFace and OpenCV
+                through webcam input.
+              </p>
+
+              <div class="tags">
+
+                <span class="tag">Python</span>
+                <span class="tag">DeepFace</span>
+                <span class="tag">OpenCV</span>
+
+              </div>
+
+              
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+      <div class="card">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-trophy"></i>
+          Achievements
+        </h2>
+
+        <div class="achievement-list">
+
+          <div class="achievement-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+              L4G (Learn for Growth) Program Participant — 2024
+            </p>
+
+          </div>
+
+          <div class="achievement-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+              Data Analysis Using Python Training — 2025
+            </p>
+
+          </div>
+
+          <div class="achievement-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+              Participant at E-Summit 2025 — IIT Bombay
+            </p>
+
+          </div>
+
+          <div class="achievement-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+              Active participant in CodeChef contests and coding competitions
+            </p>
+
+          </div>
+
+          <div class="achievement-item">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>
+              Inter-University & National-level Fencing Participant
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="card contact-box">
+
+        <h2 class="section-title">
+          <i class="fa-solid fa-envelope"></i>
+          Contact
+        </h2>
+
+        <p>Email : vardhishnuperuri@gmail.com</p>
+
+        <p>Phone : +91 9182829438</p>
+
+        <p>Andhra Pradesh, India</p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    © 2026 Vardhishnu Peruri | Portfolio
+
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+
+    toggle.addEventListener("click", () => {
+      document.body.dataset.theme =
+        document.body.dataset.theme === "dark"
+          ? ""
+          : "dark";
+    });
+  </script>
+
+</body>
+
+</html>
